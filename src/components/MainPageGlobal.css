@@ -1,4 +1,18 @@
-.img-MainPageGlobal {
-    width: 50px;
-    height: 50px;
+.img-MainPageGlobalMobile {
+    width: 100%;
 }
+.img-MainPageGlobalDesktop {
+    display: none;
+
+}
+
+@media screen and (min-width: 640px) {
+    .img-MainPageGlobalMobile {
+        display: none;
+    }
+    .img-MainPageGlobalDesktop {
+        display: block;
+        width: 100%;
+
+    }
+  }
