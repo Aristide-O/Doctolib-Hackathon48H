@@ -1,0 +1,10 @@
+@media screen and (min-width: 350px) and (max-width: 961px) {
+.containerMain {
+  margin: auto;
+  display: grid;
+  grid-template: 400px 400px 400px 400px 400px 400px / 100%;
+  grid-template-columns: 100%;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+}
