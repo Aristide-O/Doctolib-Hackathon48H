@@ -49,14 +49,6 @@ const MainPageCards = () => {
                 </Typography>
                         </CardContent>
                     </CardActionArea>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                            Share
-                </Button>
-                        <Button size="small" color="primary">
-                            Learn More
-                </Button>
-                    </CardActions>
                 </Card>
             </div>
             <div className='surveillance'>
@@ -80,14 +72,6 @@ const MainPageCards = () => {
                     </Typography>
                         </CardContent>
                         </CardActionArea>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                            Share
-                    </Button>
-                        <Button size="small" color="primary">
-                            Learn More
-                    </Button>
-                    </CardActions>
                     </Card>
                     </a>
             </div>
@@ -109,14 +93,6 @@ const MainPageCards = () => {
                     </Typography>
                         </CardContent>
                     </CardActionArea>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                            Share
-                    </Button>
-                        <Button size="small" color="primary">
-                            Learn More
-                    </Button>
-                    </CardActions>
                 </Card>
             </div>
             <div className='hospitalisation'>
@@ -137,14 +113,6 @@ const MainPageCards = () => {
                     </Typography>
                         </CardContent>
                     </CardActionArea>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                            Share
-                    </Button>
-                        <Button size="small" color="primary">
-                            Learn More
-                    </Button>
-                    </CardActions>
                 </Card>
             </div>
             <div className='vaccination'>
@@ -166,14 +134,6 @@ const MainPageCards = () => {
                     </Typography>
                         </CardContent>
                     </CardActionArea>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                            Share
-                    </Button>
-                        <Button size="small" color="primary">
-                            Learn More
-                    </Button>
-                    </CardActions>
                 </Card>
                 </a>
             </div>
@@ -195,14 +155,6 @@ const MainPageCards = () => {
                     </Typography>
                         </CardContent>
                     </CardActionArea>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                            Share
-                    </Button>
-                        <Button size="small" color="primary">
-                            Learn More
-                    </Button>
-                    </CardActions>
                 </Card>
             </div>
         </div>
