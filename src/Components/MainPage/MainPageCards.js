@@ -44,8 +44,8 @@ const MainPageCards = () => {
                                 Period perinital
                 </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
+                            We know that being a woman can be difficult, a pregnancy is even more difficult.
+                            This is why following these perinatal periods is essential.
                 </Typography>
                         </CardContent>
                     </CardActionArea>
@@ -67,8 +67,10 @@ const MainPageCards = () => {
                                 Medical supervison
                     </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
+                                Our doctors supervise our patients with care, 
+                                the health of our children are our priorities.
+                                Clear and precise monitoring is at your disposal.
+                                
                     </Typography>
                         </CardContent>
                         </CardActionArea>
@@ -88,11 +90,15 @@ const MainPageCards = () => {
                                 Growth curve
                     </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
+                                
+                            The growth curve is displayed
+                            for each child according 
+                            to their age and weight
+                            Do not hesitate to consult our curves
                     </Typography>
                         </CardContent>
                     </CardActionArea>
+
                 </Card>
             </div>
             <div className='hospitalisation'>
@@ -108,11 +114,14 @@ const MainPageCards = () => {
                                 Hospitalisation
                     </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
+                            We take care of your children safely, trust is our key word.
+                            Do not hesitate to talk to our doctors.
+                            May the force be with you
+
                     </Typography>
                         </CardContent>
                     </CardActionArea>
+
                 </Card>
             </div>
             <div className='vaccination'>
@@ -129,11 +138,12 @@ const MainPageCards = () => {
                                 Vaccination
                     </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
+                            Your baby or child may cry for a little while after a vaccination, 
+                            but they should feel better after a cuddle.
                     </Typography>
                         </CardContent>
                     </CardActionArea>
+
                 </Card>
                 </a>
             </div>
@@ -147,14 +157,15 @@ const MainPageCards = () => {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
-                                Conseils
+                                Advice
                     </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
+                            Using our Ask A Doctor service, 
+                            you can send your questions to a Doctor and the Doctor will reply within minutes.
                     </Typography>
                         </CardContent>
                     </CardActionArea>
+
                 </Card>
             </div>
         </div>
