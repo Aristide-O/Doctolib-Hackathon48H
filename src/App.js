@@ -7,22 +7,26 @@ import Inscription from './Components/InscriptionPage/Inscription';
 import Navbar from './Components/Navbar/Navbar';
 import { Switch, Route } from 'react-router-dom';
 import MedicalSurveillance from './Components/MedicalSurveillance/MedicalSurveillance';
+import ConnectionPage from './Components/ConnectionPage/ConnectionPage';
 
 const App = () => {
   return (
     <div>
       <Switch>
-        <Route path='/'>
+        <Route exact path='/'>
           <Inscription />
+        </Route>
+        <Route path='/ConnectionPage'>
+          <ConnectionPage />
         </Route>
         <Route path='/MedicalSurveillance'>
           <MedicalSurveillance />
         </Route>
         <Route path='/MainPage'>
+          <MainPageGlobal />
+          <Navbar />
           <MainPage />
         </Route>
-        <MainPageGlobal />
-        <Navbar />
       </Switch>
     </div>
   );
