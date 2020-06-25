@@ -1,10 +1,10 @@
 import React from 'react';
-import  DoctoMobileImg from "/Users/ariomega/Desktop/Doctolib/Doctolib-Hackathon48H/src/images/DoctoMobileImg.jpg"
-import  DoctoImgBannière from "/Users/ariomega/Desktop/Doctolib/Doctolib-Hackathon48H/src/images/DoctoBannièreDesktop.png"
+import  DoctoMobileImg from "Banniere/DoctoMobileImg.jpg"
+import  DoctoImgBannière from "Banniere/DoctoBannièreDesktop.png"
 import "./MainPageGlobal.css"
 
-class MainPageGlobal extends React.Component {
-render () {
+const MainPageGlobal = ()=> {
+    
     return (
         <div>
             <div>
@@ -13,7 +13,7 @@ render () {
             </div>
         </div>
     )
-}
+
 }
 
 export default MainPageGlobal

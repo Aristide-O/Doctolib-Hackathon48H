@@ -1,6 +1,6 @@
 import React from 'react';
-import MainPageGlobal from './components/MainPageGlobal.js';
-import MainPage from './Components/MainPage'
+import MainPageGlobal from './Components/Banniere/MainPageGlobal';
+import MainPage from './Components/MainPage/MainPage'
 import './App.css';
 
 function App() {
