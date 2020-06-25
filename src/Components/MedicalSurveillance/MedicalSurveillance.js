@@ -131,11 +131,11 @@ const Row = (props) => {
 }
 
 const rows = [
-    createData('Pathology', '05/01/2019', '1', 7, 65),
-    createData('Pathology', '15/02/2019', '2', 10, 80),
-    createData('Pathology', '20/03/2019', '3', 13, 92),
-    createData('Pathology', '18/04/2019', '4', 15, 101),
-    createData('Pathology', '25/06/2020', '5', 18, 118),
+    createData('Bacterial Sinusitis', '05/01/2019', '1', 7, 65),
+    createData('Cough', '15/02/2019', '2', 10, 80),
+    createData('Bronchiolitis', '20/03/2019', '3', 13, 92),
+    createData('Bronchitis', '18/04/2019', '4', 15, 101),
+    createData('Ear Pain', '25/06/2020', '5', 18, 118),
 ];
 
 const MedicalSurveillance = () => {
