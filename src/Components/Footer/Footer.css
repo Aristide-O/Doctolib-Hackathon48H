@@ -1,0 +1,34 @@
+.footer-container {
+
+    background-color: #bed8ea;
+    color: white;
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    line-height: 0.7;
+    font-size: 0.9em;
+    height: 250px;
+    margin-top: 50px;
+    
+  }
+  
+  .footer-title {
+    font-weight: bold;
+    color:white;
+    font-size: 1.5em
+  }
+  
+
+  .footer-logo img {
+    width: 200px;
+    height: auto;
+    display: grid;
+  }
+
+  .footer-link {
+      text-decoration-line: none;
+      color: rgb(14, 14, 11);
+  }
+  

@@ -1,29 +1,39 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Inscription from './Components/InscriptionPage/Inscription';
+import MainPageGlobal from './Components/Banniere/MainPageGlobal';
 import MainPage from './Components/MainPage/MainPage'
 import MedicalSurveillance from './Components/MedicalSurveillance/MedicalSurveillance';
-import VaccinationPage from './Components/VaccinationPage/VaccinationPage';
+import ConnectionPage from './Components/ConnectionPage/ConnectionPage';
+import Footer from './Components/Footer/Footer';
 
 import './App.css';
 
-
+import Inscription from './Components/InscriptionPage/Inscription';
+import Navbar from './Components/Navbar/Navbar';
+import { Switch, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="App">
-      <VaccinationPage />
-      {/*
-      <MainPage />
     <div>
       <Switch>
-        <Route path='/'>
+        <Route exact path='/'>
           <Inscription />
+          <Footer />
+        </Route>
+        <Route path='/ConnectionPage'>
+          <ConnectionPage />
+          <Footer />
         </Route>
         <Route path='/MedicalSurveillance'>
           <MedicalSurveillance />
+          <Footer />
         </Route>
-      </Switch> */}
+        <Route path='/MainPage'>
+          <MainPageGlobal />
+          <Navbar />
+          <MainPage />
+          <Footer />
+        </Route>
+      </Switch>
     </div>
   );
 }
