@@ -7,8 +7,8 @@ const MainPageGlobal =() =>{
     return (
         <div>
             <div>
-                <img className="img-MainPageGlobalMobile" src={DoctoMobileImg} alt="image photo doctor"/>
-                <img className="img-MainPageGlobalDesktop" src={DoctoImgBannière} alt="image photo doctor"/>
+                <img className="img-MainPageGlobalMobile" src={DoctoMobileImg} alt="doctor"/>
+                <img className="img-MainPageGlobalDesktop" src={DoctoImgBannière} alt="doctor"/>
             </div>
         </div>
     )

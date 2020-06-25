@@ -1,14 +1,20 @@
 import React from 'react'
+import '../ProfilPage/ProfilPage.css';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { fade, makeStyles,ThemeProvider,
+  createMuiTheme, } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import { blue } from '@material-ui/core/colors';
+import { useHistory } from 'react-router-dom'
+
+import './Navbar.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -65,11 +71,21 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
+  const theme = createMuiTheme({
+    palette: {
+        primary: blue,
+    },
+});
+
 const Navbar = () => {
-    const classes = useStyles();
+    const classes = useStyles(theme);
+
+    const history = useHistory()
+    const navigateTo = () => history.push('/ProfilPage')
 
     return(
 <div className={classes.root}>
+<ThemeProvider theme={theme}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -83,6 +99,10 @@ const Navbar = () => {
           <Typography className={classes.title} variant="h6" noWrap>
             Health E-Book
           </Typography>
+          <Button color="inherit" 
+          onClick={() => navigateTo()}>
+            Profil
+            </Button>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -95,13 +115,12 @@ const Navbar = () => {
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
-          </div>
-          <Button color="inherit">Login</Button>
+          </div>    
         </Toolbar>
       </AppBar>
+      </ThemeProvider>
     </div>
     )
-
 }
 
 export default Navbar

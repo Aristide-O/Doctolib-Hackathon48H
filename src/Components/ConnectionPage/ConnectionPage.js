@@ -13,6 +13,7 @@ import { blue } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import { useHistory } from 'react-router-dom'
 
 import './ConnectionPage.css'
 
@@ -35,6 +36,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+
+
 const ConnectionPage = () => {
     const classes = useStyles();
     const [values, setValues] = React.useState({
@@ -44,6 +47,9 @@ const ConnectionPage = () => {
         weightRange: '',
         showPassword: false,
     });
+
+    const history = useHistory()
+    const navigateTo = () => history.push('/MainPage')
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -96,7 +102,11 @@ const ConnectionPage = () => {
                     </ThemeProvider>
                 </FormControl>
                 <div className="btn-insc">
-                    <Button variant="contained" color="primary" type='submit'>
+                    <Button 
+                    variant="contained" 
+                    color="primary" 
+                    type='submit'
+                    onClick={() => navigateTo()}>
                         submit
             </Button>
                 </div>
