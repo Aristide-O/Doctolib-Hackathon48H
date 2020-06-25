@@ -32,7 +32,7 @@ const MainPageCards = () => {
 
   return (
     <div className= 'containerMain'>
-        <div>
+        <div className='perinatal'>
             <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
@@ -60,7 +60,7 @@ const MainPageCards = () => {
             </CardActions>
             </Card>
         </div>
-        <div>
+        <div className='surveillance'>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
@@ -88,7 +88,7 @@ const MainPageCards = () => {
                 </CardActions>
                 </Card>
         </div>
-        <div>
+        <div className='growth'>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
@@ -116,7 +116,7 @@ const MainPageCards = () => {
                 </CardActions>
                 </Card>
         </div>
-        <div>
+        <div className='hospitalisation'>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
@@ -144,7 +144,7 @@ const MainPageCards = () => {
                 </CardActions>
                 </Card>
         </div>
-        <div>
+        <div className='vaccination'>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
@@ -172,7 +172,7 @@ const MainPageCards = () => {
                 </CardActions>
                 </Card>
         </div>
-        <div>
+        <div className='conseil'>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
