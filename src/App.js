@@ -3,14 +3,18 @@ import React from 'react';
 import './App.css';
 import Inscription from './Components/InscriptionPage/Inscription';
 import Navbar from './Components/Navbar/Navbar';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
+import MedicalSurveillance from './Components/MedicalSurveillance/MedicalSurveillance';
 
 const App = () => {
   return (
     <div>
       <Switch>
-        <Route path='/'>
+        {/* <Route path='/'>
           <Inscription />
+        </Route> */}
+        <Route path='/'>
+          <MedicalSurveillance />
         </Route>
         <Navbar />
       </Switch>
