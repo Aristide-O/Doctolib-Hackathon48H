@@ -5,9 +5,10 @@ import Footer from './Components/Footer/Footer';
 
 import './App.css';
 
-import GrowthPage from './Components/GrowthPage/GrowthPage'
+import GrowthPage from './Components/GrowthPage/GrowthPage';
 import Inscription from './Components/InscriptionPage/Inscription';
-import MainPage from './Components/MainPage/MainPage'
+import LandingPage from './Components/LandingPage/LandingPage';
+import MainPage from './Components/MainPage/MainPage';
 import MainPageGlobal from './Components/Banniere/MainPageGlobal';
 import MedicalSurveillance from './Components/MedicalSurveillance/MedicalSurveillance';
 import Navbar from './Components/Navbar/Navbar';
@@ -22,6 +23,9 @@ const App = () => {
       <MainPageGlobal />
       <Switch>
         <Route exact path='/'>
+          <LandingPage />         
+        </Route>
+        <Route path='/nscription'>
           <Inscription />         
         </Route>
         <Route path='/ConnectionPage'>
