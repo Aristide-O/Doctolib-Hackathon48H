@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import { blue } from '@material-ui/core/colors';
+import { useHistory } from 'react-router-dom'
 
 import './Navbar.css'
 
@@ -79,6 +80,9 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
     const classes = useStyles(theme);
 
+    const history = useHistory()
+    const navigateTo = () => history.push('/ProfilPage')
+
     return(
 <div className={classes.root}>
 <ThemeProvider theme={theme}>
@@ -95,7 +99,10 @@ const Navbar = () => {
           <Typography className={classes.title} variant="h6" noWrap>
             Health E-Book
           </Typography>
-          <Button color="inherit"><a href='/ProfilPage' className='Btn-style'>Profil</a></Button>
+          <Button color="inherit" 
+          onClick={() => navigateTo()}>
+            Profil
+            </Button>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

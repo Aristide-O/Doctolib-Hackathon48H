@@ -42,7 +42,7 @@ const Inscription = () => {
     const classes = useStyles();
 
     const history = useHistory()
-    const navigateTo = () => history.push('/MainPage')
+    const navigateTo = () => history.push('/ConnectionPage')
 
     const [values, setValues] = React.useState({
         amount: '',
@@ -125,9 +125,7 @@ const Inscription = () => {
                         variant="contained"
                         color="primary"
                         onClick={() => navigateTo()}>
-                        <a href='/MainPage'>
-                            submit
-                        </a>
+                            submit          
                     </Button>
                 </div>
             </div>
