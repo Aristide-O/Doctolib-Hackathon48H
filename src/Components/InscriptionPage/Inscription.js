@@ -9,10 +9,11 @@ import FormControl from '@material-ui/core/FormControl';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import IconButton from '@material-ui/core/IconButton';
-import { blue } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import { blue } from '@material-ui/core/colors';
+import { useHistory } from 'react-router-dom'
 
 import './Inscription.css'
 
@@ -35,8 +36,14 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+
+
 const Inscription = () => {
     const classes = useStyles();
+
+    const history = useHistory()
+    const navigateTo = () => history.push('/MainPage')
+
     const [values, setValues] = React.useState({
         amount: '',
         password: '',
@@ -114,9 +121,14 @@ const Inscription = () => {
                     </ThemeProvider>
                 </FormControl>
                 <div className="btn-insc">
-                    <Button variant="contained" color="primary" type='submit'>
-                        submit
-            </Button>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={() => navigateTo()}>
+                        <a href='/MainPage'>
+                            submit
+                        </a>
+                    </Button>
                 </div>
             </div>
         </div>
