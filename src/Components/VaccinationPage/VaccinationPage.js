@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
     makeStyles,
     ThemeProvider,
@@ -13,6 +13,8 @@ import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import MainPageGlobal from '../Banniere/MainPageGlobal';
+import Navbar from '../Navbar/Navbar';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -70,14 +72,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function createData(Pathology, Date, Age, Weight, Tall, Examen) {
+function createData(Date, Vaccine, Lot, eSignature) {
 
     return {
-        Pathology,
         Date,
-        Age,
-        Weight,
-        Tall,
+        Vaccine,
+        Lot,
+        eSignature,
         Details: [
             { resume: "Details" }
         ]
@@ -97,12 +98,11 @@ const Row = (props) => {
                     </IconButton>
                 </TableCell>
                 <TableCell component="th" scope="row">
-                    {row.Pathology}
+                    {row.Date}
                 </TableCell>
-                <TableCell align="left">{row.Date}</TableCell>
-                <TableCell align="left">{row.Age}</TableCell>
-                <TableCell align="left">{row.Weight}</TableCell>
-                <TableCell align="left">{row.Tall}</TableCell>
+                <TableCell align="left">{row.Vaccine}</TableCell>
+                <TableCell align="left">{row.Lot}</TableCell>
+                <TableCell align="left">{row.eSignature}</TableCell>
             </TableRow>
             <TableRow>
                 <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -153,6 +153,8 @@ const VaccinationPage = () => {
     };
     return (
         <div>
+            <MainPageGlobal />
+            <Navbar />
             <div className='h1-exa'>
                 <h1>Vaccination</h1>
             </div>
