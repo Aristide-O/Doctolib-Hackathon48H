@@ -11,12 +11,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import Perinatal from './MainPage/femmeEnceinte.jpg'
-import surveillance from './MainPage/surveillanceMedical.jpg'
-import courbe from './MainPage/courbeDeCroissance.png'
-import hospitalisation from './MainPage/hospitalisation.jpg'
-import vaccination from './MainPage/vaccination.jpg'
-import Conseil from './MainPage/Conseil.jpg'
+import Perinatal from './femmeEnceinte.jpg'
+import surveillance from './surveillanceMedical.jpg'
+import courbe from './courbeDeCroissance.png'
+import hospitalisation from './hospitalisation.jpg'
+import vaccination from './vaccination.jpg'
+import Conseil from './Conseil.jpg'
 
 const useStyles = makeStyles({
   root: {
