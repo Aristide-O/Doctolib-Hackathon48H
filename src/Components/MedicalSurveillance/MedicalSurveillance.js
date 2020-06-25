@@ -79,7 +79,7 @@ function createData(Pathology, Date, Age, Weight, Tall, Examen) {
         Weight,
         Tall,
         Details: [
-            { resume: "Examen" }
+            { resume: "Details" }
         ]
     };
 }
@@ -109,7 +109,7 @@ const Row = (props) => {
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <Box margin={1}>
                             <Typography variant="h6" gutterBottom component="div">
-                                Details
+                                Examen
                   </Typography>
                             <Table size="small" aria-label="purchases">
                                 <TableBody>
@@ -159,22 +159,31 @@ const MedicalSurveillance = () => {
             <ThemeProvider theme={theme}>
                 <div className='form-exa'>
                     <FormControl fullWidth className={classes.margin}>
-                        <div className='data-exa'>
+
+                        <div className='input-exa'>
+                            <TextField
+                                className={classes.margin}
+                                variant="outlined"
+                                id="mui-theme-provider-outlined-input"
+                                type='Date'
+                                required
+                            />
+                        </div><div className='data-exa'>
                             <div className="align-exa">
                                 <div className='input-exa'>
                                     <TextField
                                         className={classes.margin}
-                                        label="Date"
+                                        label="Weight"
                                         variant="outlined"
                                         id="mui-theme-provider-outlined-input"
-                                        // type='Date'
+                                        type='number'
                                         required
                                     />
                                 </div>
                                 <div className='input-exa'>
                                     <TextField
                                         className={classes.margin}
-                                        label="Weight"
+                                        label="Tall"
                                         variant="outlined"
                                         id="mui-theme-provider-outlined-input"
                                         type='number'
@@ -196,25 +205,16 @@ const MedicalSurveillance = () => {
                                 <div className='input-exa'>
                                     <TextField
                                         className={classes.margin}
-                                        label="Tall"
+                                        label="Pathology"
                                         variant="outlined"
                                         id="mui-theme-provider-outlined-input"
-                                        type='number'
+                                        type='text'
                                         required
                                     />
                                 </div>
                             </div>
                         </div>
-                        <div className='input-exa'>
-                            <TextField
-                                className={classes.margin}
-                                label="Pathology"
-                                variant="outlined"
-                                id="mui-theme-provider-outlined-input"
-                                type='text'
-                                required
-                            />
-                        </div>
+
                         <div className='area-exa'>
                             <TextField
                                 id="mui-theme-provider-outlined-full-width-input"

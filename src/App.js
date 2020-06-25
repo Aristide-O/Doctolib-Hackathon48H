@@ -10,10 +10,10 @@ const App = () => {
   return (
     <div>
       <Switch>
-        {/* <Route path='/'>
-          <Inscription />
-        </Route> */}
         <Route path='/'>
+          <Inscription />
+        </Route>
+        <Route path='/MedicalSurveillance'>
           <MedicalSurveillance />
         </Route>
         <Navbar />
