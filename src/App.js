@@ -1,19 +1,23 @@
 import React from 'react';
-import MainPageGlobal from './Components/Banniere/MainPageGlobal';
+import { Switch, Route } from 'react-router-dom';
+import Inscription from './Components/InscriptionPage/Inscription';
 import MainPage from './Components/MainPage/MainPage'
+import MainPageGlobal from './Components/Banniere/MainPageGlobal';
+import MedicalSurveillance from './Components/MedicalSurveillance/MedicalSurveillance';
+import Navbar from './Components/Navbar/Navbar';
+import VaccinationPage from './Components/VaccinationPage/VaccinationPage';
 
 import './App.css';
-import Inscription from './Components/InscriptionPage/Inscription';
-import Navbar from './Components/Navbar/Navbar';
-import { Switch, Route } from 'react-router-dom';
-import MedicalSurveillance from './Components/MedicalSurveillance/MedicalSurveillance';
+
+
 
 const App = () => {
   return (
     <div className="App">
+      <VaccinationPage />
       {/* <MainPageGlobal />
-      <MainPage /> */}
-    {/* <div> */}
+      <MainPage />
+    <div>
       <Switch>
         <Route path='/'>
           <Inscription />
@@ -22,7 +26,7 @@ const App = () => {
           <MedicalSurveillance />
         </Route>
         <Navbar />
-      </Switch>
+      </Switch> */}
     </div>
   );
 }
