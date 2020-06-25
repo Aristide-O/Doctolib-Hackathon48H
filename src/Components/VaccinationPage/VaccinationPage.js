@@ -153,8 +153,6 @@ const VaccinationPage = () => {
     };
     return (
         <div>
-            <MainPageGlobal />
-            <Navbar />
             <div className='h1-exa'>
                 <h1>Vaccination</h1>
             </div>
@@ -176,7 +174,7 @@ const VaccinationPage = () => {
                         <div className='input-exa'>
                                     <TextField
                                         className={classes.margin}
-                                        label="Lot"
+                                        label="Lot serial number"
                                         variant="outlined"
                                         id="mui-theme-provider-outlined-input"
                                         type='text'
@@ -237,7 +235,7 @@ const VaccinationPage = () => {
                                         <StyledTableCell >Détails</StyledTableCell>
                                         <StyledTableCell >Date</StyledTableCell>
                                         <StyledTableCell >Vaccine</StyledTableCell>
-                                        <StyledTableCell >Lot</StyledTableCell>
+                                        <StyledTableCell >Lot serial number</StyledTableCell>
                                         <StyledTableCell >e-signature</StyledTableCell>
                                     </TableRow>
                                 </TableHead>

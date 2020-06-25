@@ -148,6 +148,7 @@ const MainPageCards = () => {
                 </Card>
             </div>
             <div className='vaccination'>
+                <a href="/VaccinationPage">
                 <Card className={classes.root}>
                     <CardActionArea>
                         <CardMedia
@@ -174,6 +175,7 @@ const MainPageCards = () => {
                     </Button>
                     </CardActions>
                 </Card>
+                </a>
             </div>
             <div className='conseil'>
                 <Card className={classes.root}>
