@@ -106,7 +106,7 @@ const ProfilPage = () => {
                     <Grid container spacing={2}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="Picture" src="/static/images/grid/complex.jpg" />
+                                <img className={classes.img} alt="parent" src="/static/images/grid/complex.jpg" />
                             </ButtonBase>
                         </Grid>
                         <Grid item xs={12} sm container>
