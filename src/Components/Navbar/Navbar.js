@@ -82,6 +82,7 @@ const Navbar = () => {
 
     const history = useHistory()
     const navigateTo = () => history.push('/ProfilPage')
+    const navigateToTwo = () => history.push('/MainPage')
 
     return(
 <div className={classes.root}>
@@ -97,7 +98,10 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Health E-Book
+            <Button color="inherit" 
+            onClick={() => navigateToTwo()}>
+              Health E-Book
+            </Button>
           </Typography>
           <Button color="inherit" 
           onClick={() => navigateTo()}>

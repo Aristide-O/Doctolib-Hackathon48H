@@ -12,6 +12,7 @@ import MainPageGlobal from './Components/Banniere/MainPageGlobal';
 import MedicalSurveillance from './Components/MedicalSurveillance/MedicalSurveillance';
 import Navbar from './Components/Navbar/Navbar';
 import ProfilPage from './Components/ProfilPage/ProfilPage';
+import VaccinationPage from './Components/VaccinationPage/VaccinationPage';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -41,6 +42,10 @@ const App = () => {
         <Route path='/GrowthPage'>
           <Navbar />
           <GrowthPage />
+        </Route>
+        <Route path='/VaccinationPage'>
+          <Navbar />
+          <VaccinationPage />
         </Route>
       </Switch>
       <Footer />
