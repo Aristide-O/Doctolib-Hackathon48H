@@ -1,0 +1,11 @@
+.containerMain {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  justify-content: space-around;
+  margin: 40px auto 0;
+}
+
+.containerMain div{
+  margin-bottom: 20px;
+}
