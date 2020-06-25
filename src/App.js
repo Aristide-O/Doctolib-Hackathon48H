@@ -1,5 +1,5 @@
 import React from 'react';
-import MainPageGlobal from './components/MainPageGlobal.js';
+import MainPageGlobal from './Components/MainPageGlobal';
 import MainPage from './Components/MainPage'
 import './App.css';
 
