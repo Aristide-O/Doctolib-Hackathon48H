@@ -63,7 +63,6 @@ const ConnectionPage = () => {
             <div className="cont-insc">
                 <FormControl className={classes.margin}>
                     <ThemeProvider theme={theme}>
-                       
                         <div className='input-insc'>
                             <TextField
                                 className={classes.margin}
