@@ -7,6 +7,7 @@ import './App.css';
 
 import GrowthPage from './Components/GrowthPage/GrowthPage'
 import Inscription from './Components/InscriptionPage/Inscription';
+import Hospitalisation from './Components/Hospitalisation/Hospitalisation';
 import MainPage from './Components/MainPage/MainPage'
 import MainPageGlobal from './Components/Banniere/MainPageGlobal';
 import MedicalSurveillance from './Components/MedicalSurveillance/MedicalSurveillance';
@@ -16,39 +17,59 @@ import VaccinationPage from './Components/VaccinationPage/VaccinationPage';
 
 import { Switch, Route } from 'react-router-dom';
 
+
 const App = () => {
   return (
     <div>
-      <MainPageGlobal />
       <Switch>
         <Route exact path='/'>
-          <Inscription />         
+          <MainPageGlobal />
+          <Inscription />
+          <Footer />
         </Route>
         <Route path='/ConnectionPage'>
-          <ConnectionPage />         
+          <MainPageGlobal />
+          <ConnectionPage />
+          <Footer />
         </Route>
         <Route path='/MedicalSurveillance'>
+          <MainPageGlobal />
           <Navbar />
-          <MedicalSurveillance />         
+          <MedicalSurveillance />
+          <Footer />
         </Route>
         <Route path='/MainPage'>
+          <MainPageGlobal />
           <Navbar />
-          <MainPage />       
+          <MainPage />
+          <Footer />
         </Route>
         <Route path='/ProfilPage'>
+          <MainPageGlobal />
           <Navbar />
           <ProfilPage />
+          <Footer />
         </Route>
         <Route path='/GrowthPage'>
+          <MainPageGlobal />
           <Navbar />
           <GrowthPage />
+          <Footer />
+        </Route>
+        <Route path='/Hospitalisation'>
+          <MainPageGlobal />
+          <Navbar />
+          <Hospitalisation />
+          <Footer />
         </Route>
         <Route path='/VaccinationPage'>
+          <MainPageGlobal />
           <Navbar />
           <VaccinationPage />
+          <Footer />
         </Route>
       </Switch>
-      <Footer />
+
     </div>
   );
 }

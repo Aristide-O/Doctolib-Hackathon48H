@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-    makeStyles,
-    ThemeProvider,
-    createMuiTheme,
-    withStyles
-} from '@material-ui/core/styles';
-import { blue } from '@material-ui/core/colors';
+
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Collapse from '@material-ui/core/Collapse';
@@ -13,8 +7,6 @@ import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import MainPageGlobal from '../Banniere/MainPageGlobal';
-import Navbar from '../Navbar/Navbar';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -26,6 +18,17 @@ import TableRow from '@material-ui/core/TableRow';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
+import { BackTop } from 'antd';
+import { blue } from '@material-ui/core/colors';
+import {
+    makeStyles,
+    ThemeProvider,
+    createMuiTheme,
+    withStyles
+} from '@material-ui/core/styles';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 import './VaccinationPage.css';
 
 const useRowStyles = makeStyles({
@@ -89,6 +92,7 @@ const Row = (props) => {
     const { row } = props;
     const [open, setOpen] = React.useState(false);
     const classes = useRowStyles();
+
     return (
         <React.Fragment>
             <TableRow className={classes.root}>
@@ -110,7 +114,7 @@ const Row = (props) => {
                         <Box margin={1}>
                             <Typography variant="h6" gutterBottom component="div">
                                 Examen
-                  </Typography>
+                            </Typography>
                             <Table size="small" aria-label="purchases">
                                 <TableBody>
                                     {row.Details.map((DetailsRow) => (
@@ -138,10 +142,32 @@ const rows = [
     createData('25/06/2020', 'Meningococcal vaccine', 'c-63567SP', 'Ph Honoré Bonaventure'),
 ];
 
+const style = {
+    height: 40,
+    width: 40,
+    lineHeight: '40px',
+    borderRadius: 4,
+    backgroundColor: '#1088e9',
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 14,
+  };
+
 const VaccinationPage = () => {
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+
+    const notify = () => toast.success(' Add Success!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -162,16 +188,16 @@ const VaccinationPage = () => {
 
                         <div className='data-exa'>
                             <div className="align-exa">
-                            <div className='input-exa'>
-                            <TextField
-                                className={classes.margin}
-                                variant="outlined"
-                                id="mui-theme-provider-outlined-input"
-                                type='Date'
-                                required
-                            />
-                        </div>
-                        <div className='input-exa'>
+                                <div className='input-exa'>
+                                    <TextField
+                                        className={classes.margin}
+                                        variant="outlined"
+                                        id="mui-theme-provider-outlined-input"
+                                        type='Date'
+                                        required
+                                    />
+                                </div>
+                                <div className='input-exa'>
                                     <TextField
                                         className={classes.margin}
                                         label="Lot serial number"
@@ -183,7 +209,7 @@ const VaccinationPage = () => {
                                 </div>
                             </div>
                             <div className="align-exa">
-                            <div className='input-exa'>
+                                <div className='input-exa'>
                                     <TextField
                                         className={classes.margin}
                                         label="Vaccine"
@@ -220,10 +246,20 @@ const VaccinationPage = () => {
                         </div>
 
                     </FormControl>
-                    <div className="btn-insc">
-                        <Button variant="contained" color="primary" type='submit'>
-                            submit
-            </Button>
+                    <div className="btn">
+                        <Button variant="contained" onClick={notify} color="primary" type='submit'>
+                            Add
+            </Button><ToastContainer
+                            position="top-right"
+                            autoClose={3000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover />
+
                     </div>
                 </div>
                 <div className="cont-tab">
@@ -259,6 +295,9 @@ const VaccinationPage = () => {
                     </Paper>
                 </div>
             </ThemeProvider>
+            <BackTop>
+                <div style={style}>UP</div>
+            </BackTop>
         </div >
     )
 }

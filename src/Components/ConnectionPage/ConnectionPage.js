@@ -1,118 +1,77 @@
 import React from 'react'
-import {
-    makeStyles,
-    ThemeProvider,
-    createMuiTheme,
-} from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import IconButton from '@material-ui/core/IconButton';
-import { blue } from '@material-ui/core/colors';
-import Button from '@material-ui/core/Button';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
+
+import { Form, Input, Button, Checkbox } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom'
 
+import 'antd/dist/antd.css'
 import './ConnectionPage.css'
 
-const theme = createMuiTheme({
-    palette: {
-        primary: blue,
-    },
-});
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-        margin: {
-            margin: theme.spacing(1),
-        },
-    },
-}));
-
-
-
 const ConnectionPage = () => {
-    const classes = useStyles();
-    const [values, setValues] = React.useState({
-        amount: '',
-        password: '',
-        weight: '',
-        weightRange: '',
-        showPassword: false,
-    });
+    const onFinish = values => {
+        console.log('Received values of form: ', values);
+    };
 
     const history = useHistory()
-    const navigateTo = () => history.push('/MainPage')
-
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
-
-    const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
-    };
-
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
+    const navigateToMain = () => history.push('/MainPage')
 
     return (
-        <div>
-            <h1 className="h1-insc">Connexion</h1>
-            <div className="cont-insc">
-                <FormControl className={classes.margin}>
-                    <ThemeProvider theme={theme}>
-                        <div className='input-insc'>
-                            <TextField
-                                className={classes.margin}
-                                label="Email"
-                                variant="outlined"
-                                id="mui-theme-provider-outlined-input"
-                                type="Email"
-                                required
-                            />
-                        </div>
-                        <div className='input-insc'>
-                            <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={values.showPassword ? 'text' : 'password'}
-                                value={values.password}
-                                onChange={handleChange('password')}
-                                endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                            edge="end"
-                                        >
-                                            {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
-                            />
-                        </div>
-                    </ThemeProvider>
-                </FormControl>
-                <div className="btn-insc">
-                    <Button 
-                    variant="contained" 
-                    color="primary" 
-                    type='submit'
-                    onClick={() => navigateTo()}>
-                        submit
-            </Button>
-                </div>
-            </div>
+        <div className="cont-con">
+            <Form
+                name="normal_login"
+                className="login-form"
+                initialValues={{
+                    remember: true,
+                }}
+                onFinish={onFinish}
+            >
+                <Form.Item
+                    name="username"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please input your Username!',
+                        },
+                    ]}
+                >
+                    <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+                </Form.Item>
+                <Form.Item
+                    name="password"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please input your Password!',
+                        },
+                    ]}
+                >
+                    <Input
+                        prefix={<LockOutlined className="site-form-item-icon" />}
+                        type="password"
+                        placeholder="Password"
+                    />
+                </Form.Item>
+                <Form.Item>
+                    <Form.Item name="remember" valuePropName="checked" noStyle>
+                        <Checkbox>Remember me</Checkbox>
+                    </Form.Item>
+
+                    <a className="login-form-forgot" href="#">
+                        Forgot password
+                </a>
+                </Form.Item>
+
+                <Form.Item>
+                    <Button type="primary" onClick={() => navigateToMain()} className="login-form-button">
+                        Log in
+          </Button>
+          Or <a href="/">register now!</a>
+                </Form.Item>
+            </Form>
         </div>
-    )
-}
+    );
+};
+
+
 
 export default ConnectionPage

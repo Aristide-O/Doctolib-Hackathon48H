@@ -1,5 +1,5 @@
  
-  .form-exa {
+  .form-hos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,25 +10,25 @@
     width: 50%;
   }
   
-  .data-exa {
+  .data-hos {
     display: flex;
     flex-direction: row;
     align-items: space-between;
   }
   
-  .input-exa {
+  .input-hos {
     margin: 15px 10px;
     text-align: center;
   }
   
-  .align-exa {
+  .align-hos {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
   }
   
-  .area-exa {
+  .area-hos {
     margin-top: 15px;
   }
   

@@ -2,17 +2,29 @@
   display: flex;
   flex-direction: column;
   Justify-content: center;
-  width: 80%;
+  width: 70%;
   margin: 0px auto;
   text-align: center;
+  border: 2px solid #1e90ff;
+  border-radius: 1%;
 }
 
-.h2-Pro {
+.parent-cont {
+  display: flex;
+  flex-direction: column;
+  Justify-content: center;
+  width: 40%;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #1e90ff;
+  border-radius: 1%;
+}
+
+.h1-Pro {
   text-align: center;
   margin: 20px 0px;
 }
 
 .child{
     margin-bottom: 30px;
-
 }

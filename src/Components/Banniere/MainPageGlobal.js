@@ -1,6 +1,8 @@
 import React from 'react';
+
 import  DoctoMobileImg from "./DoctoMobileImg.jpg"
 import  DoctoImgBannière from "./DoctoBannièreDesktop.png"
+
 import "./MainPageGlobal.css"
 
 const MainPageGlobal =() =>{

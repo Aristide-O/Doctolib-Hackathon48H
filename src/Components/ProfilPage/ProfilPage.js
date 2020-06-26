@@ -1,12 +1,10 @@
-import React, {forwardRef} from 'react'
+import React, { forwardRef } from 'react'
 
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import MaterialTable from 'material-table';
+
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
+import Button from '@material-ui/core/Button';
+import ButtonBase from '@material-ui/core/ButtonBase';
 import Check from '@material-ui/icons/Check';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
@@ -15,13 +13,24 @@ import DeleteOutline from '@material-ui/icons/DeleteOutline';
 import Edit from '@material-ui/icons/Edit';
 import FilterList from '@material-ui/icons/FilterList';
 import FirstPage from '@material-ui/icons/FirstPage';
+import Grid from '@material-ui/core/Grid';
 import LastPage from '@material-ui/icons/LastPage';
+import MaterialTable from 'material-table';
+import Paper from '@material-ui/core/Paper';
+import Photo from './photo.jpeg'
 import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
+import Typography from '@material-ui/core/Typography';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { BackTop } from 'antd';
+import { blue } from '@material-ui/core/colors';
+import {
+    makeStyles,
+    ThemeProvider,
+    createMuiTheme,
+} from '@material-ui/core/styles';
 
 import './ProfilPage.css';
 
@@ -65,10 +74,27 @@ const tableIcons = {
     SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
     ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
-  };
+};
+
+const theme = createMuiTheme({
+    palette: {
+        primary: blue,
+    },
+});
+
+const style = {
+    height: 40,
+    width: 40,
+    lineHeight: '40px',
+    borderRadius: 4,
+    backgroundColor: '#1088e9',
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 14,
+};
 
 const ProfilPage = () => {
-    const classes = useStyles();
+    const classes = useStyles(theme);
     const [state, setState] = React.useState({
         columns: [
             { title: 'LastName', field: 'Lastname' },
@@ -85,104 +111,111 @@ const ProfilPage = () => {
                 LastName: 'Doe',
                 Firstname: 'John',
                 birthYear: 1987,
-                birthCity: 69
+                birthCity: 75
             },
             {
                 LastName: 'Doe',
                 Firstname: 'Johanna',
-                birthYear: 2017,
+                birthYear: 1990,
                 birthCity: 75,
             },
         ],
     });
 
     return (
-        <div className='child'>
-            <div className='h2-Pro'>
-            <h2>Parent</h2>
-            </div>
-            <div className={classes.root}>
-                <Paper className={classes.paper}>
-                    <Grid container spacing={2}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="Picture" src="/static/images/grid/complex.jpg" />
-                            </ButtonBase>
-                        </Grid>
-                        <Grid item xs={12} sm container>
-                            <Grid item xs container direction="column" spacing={2}>
-                                <Grid item xs>
-                                    <Typography gutterBottom variant="subtitle1">
-                                        Lastname Fisrtname
-                </Typography>
-                                    <Typography variant="body2" gutterBottom>
-                                        Adresse
-                </Typography>
-                                    <Typography variant="body2" color="textSecondary">
-                                        Security Social
-                </Typography>
-                                </Grid>
+        <ThemeProvider theme={theme}>
+            <div className='child'>
+                <div className='h1-Pro'>
+                    <h1>Parent</h1>
+                </div>
+                <div className='parent-cont'>
+                    <div className={classes.root}>
+                        <Paper className={classes.paper}>
+                            <Grid container spacing={2}>
                                 <Grid item>
-                                    <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                                        Modify
-                </Typography>
+                                    <ButtonBase className={classes.image}>
+                                        <img className={classes.img} alt="parent" src={Photo} />
+                                    </ButtonBase>
                                 </Grid>
-                            </Grid>    
-                        </Grid>
-                    </Grid>
-                </Paper>
-            </div>
-            <div >
-                <h2 className='h2-Pro'>
-                    Children
-                </h2>
-            </div>
-            <div className='child-cont'>
-                <MaterialTable
-                icons={tableIcons}
-                    title="Manage"
-                    columns={state.columns}
-                    data={state.data}
-                    editable={{
-                        onRowAdd: (newData) =>
-                            new Promise((resolve) => {
-                                setTimeout(() => {
-                                    resolve();
-                                    setState((prevState) => {
-                                        const data = [...prevState.data];
-                                        data.push(newData);
-                                        return { ...prevState, data };
-                                    });
-                                }, 600);
-                            }),
-                        onRowUpdate: (newData, oldData) =>
-                            new Promise((resolve) => {
-                                setTimeout(() => {
-                                    resolve();
-                                    if (oldData) {
+                                <Grid item xs={12} sm container>
+                                    <Grid item xs container direction="column" spacing={2}>
+                                        <Grid item xs>
+                                            <Typography gutterBottom variant="subtitle1">
+                                                Lastname Fisrtname
+                                    </Typography>
+                                            <Typography variant="body2" gutterBottom>
+                                                Adresse
+                                    </Typography>
+                                            <Typography variant="body2" color="textSecondary">
+                                                Security Social
+                                    </Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            <Button variant="contained" size='small' color="primary" type='submit'>
+                                                Modify
+                                        </Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Paper>
+                    </div>
+                </div>
+                <div >
+                    <h1 className='h1-Pro'>
+                        Children
+                </h1>
+                </div>
+                <div className='child-cont'>
+                    <MaterialTable
+                        icons={tableIcons}
+                        title="Manage"
+                        columns={state.columns}
+                        data={state.data}
+                        editable={{
+                            onRowAdd: (newData) =>
+                                new Promise((resolve) => {
+                                    setTimeout(() => {
+                                        resolve();
                                         setState((prevState) => {
                                             const data = [...prevState.data];
-                                            data[data.indexOf(oldData)] = newData;
+                                            data.push(newData);
                                             return { ...prevState, data };
                                         });
-                                    }
-                                }, 600);
-                            }),
-                        onRowDelete: (oldData) =>
-                            new Promise((resolve) => {
-                                setTimeout(() => {
-                                    resolve();
-                                    setState((prevState) => {
-                                        const data = [...prevState.data];
-                                        data.splice(data.indexOf(oldData), 1);
-                                        return { ...prevState, data };
-                                    });
-                                }, 600);
-                            }),
-                    }}
-                />
+                                    }, 400);
+                                }),
+                            onRowUpdate: (newData, oldData) =>
+                                new Promise((resolve) => {
+                                    setTimeout(() => {
+                                        resolve();
+                                        if (oldData) {
+                                            setState((prevState) => {
+                                                const data = [...prevState.data];
+                                                data[data.indexOf(oldData)] = newData;
+                                                return { ...prevState, data };
+                                            });
+                                        }
+                                    }, 400);
+                                }),
+                            onRowDelete: (oldData) =>
+                                new Promise((resolve) => {
+                                    setTimeout(() => {
+                                        resolve();
+                                        setState((prevState) => {
+                                            const data = [...prevState.data];
+                                            data.splice(data.indexOf(oldData), 1);
+                                            return { ...prevState, data };
+                                        });
+                                    }, 400);
+                                }),
+                        }}
+                    />
+                </div>
+                <BackTop>
+                    <div style={style}>UP</div>
+                </BackTop>
             </div>
-        </div>
+        </ThemeProvider>
     );
 }
 
