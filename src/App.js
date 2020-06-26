@@ -22,7 +22,10 @@ const App = () => {
   return (
     <div>
       <Switch>
-        <Route exact path='/'>
+      {/* <Route exact path='/'>
+          <LandingPage />
+        </Route> */}
+        <Route exact path='/InscriptionPage'>
           <MainPageGlobal />
           <Inscription />
           <Footer />
