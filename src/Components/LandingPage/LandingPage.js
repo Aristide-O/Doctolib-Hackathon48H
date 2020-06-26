@@ -31,9 +31,9 @@ export default function LandingPage() {
       <p className="title-landingPage">
         Health e-Book
       </p>
-      {/* <div className='alreadyRegistered'>
-      <p>Already Registered?</p>
-      </div> */}
+      <div className='alreadyRegistered'>
+      <p>Sign Up</p>
+      </div>
       <div className="Buttons-landingPage">
       <NavLink to="/Inscription">
         <Button variant="outlined" size="large" color="primary" className={classes.margin}>
