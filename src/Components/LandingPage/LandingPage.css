@@ -1,9 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Passion+One&display=swap');
+
 .Buttons-landingPage {
     display: flex;
     margin: auto;
 }
 
+.content-landingPage {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+
+}
+
 .landingPage-flex {
     display: flex;
-    background-image: url();
+    background-color: #91c9f2;
+    background-image: url(./DoctoimgBackground.jpg);
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+}
+
+.title-landingPage {
+    display: flex;
+    font-size: 64px;
+    color: #16295e;
+    /* color: #d8e2ea; */
+    /* color: #b27650; */
+    /* margin-left: 50px; */
+    font-family: 'Archivo Black', sans-serif;
 }

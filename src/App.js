@@ -17,15 +17,16 @@ import VaccinationPage from './Components/VaccinationPage/VaccinationPage';
 
 import { Switch, Route } from 'react-router-dom';
 
+
 const App = () => {
   return (
     <div>
-      <MainPageGlobal />
+      {/* <MainPageGlobal /> */}
       <Switch>
         <Route exact path='/'>
           <LandingPage />         
         </Route>
-        <Route path='/nscription'>
+        <Route path='/Inscription'>
           <Inscription />         
         </Route>
         <Route path='/ConnectionPage'>
@@ -52,7 +53,6 @@ const App = () => {
           <VaccinationPage />
         </Route>
       </Switch>
-      <Footer />
     </div>
   );
 }

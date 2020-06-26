@@ -18,13 +18,21 @@ export default function LandingPage() {
 
   return (
     <div className="landingPage-flex">
+      <div className="content-landingPage">
+      <p className="title-landingPage">
+        Health e-Book
+      </p>
       <div className="Buttons-landingPage">
         <Button variant="outlined" size="large" color="primary" className={classes.margin}>
-          Public
+          Particulier
+        </Button>
+        <Button variant="outlined" size="large" color="primary" className={classes.margin}>
+          Login
         </Button>
         <Button variant="outlined" size="large" color="primary" className={classes.margin}>
           Professionnal
         </Button>
+      </div>
       </div>
     </div>
   );
