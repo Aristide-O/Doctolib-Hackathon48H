@@ -1,21 +1,21 @@
 import React from 'react'
 
-import './MainPageCards.css'
 
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Perinatal from './femmeEnceinte.jpg'
-import surveillance from './surveillanceMedical.jpg'
+import Conseil from './Conseil.jpg'
 import courbe from './courbeDeCroissance.png'
 import hospitalisation from './hospitalisation.jpg'
+import Perinatal from './femmeEnceinte.jpg'
+import surveillance from './surveillanceMedical.jpg'
+import Typography from '@material-ui/core/Typography';
 import vaccination from './vaccination.jpg'
-import Conseil from './Conseil.jpg'
+
+import { makeStyles } from '@material-ui/core/styles';
+
+import './MainPageCards.css'
 
 const useStyles = makeStyles({
     root: {
@@ -78,6 +78,7 @@ const MainPageCards = () => {
                     </a>
             </div>
             <div className='growth'>
+            <a href='/GrowthPage'>
                 <Card className={classes.root}>
                     <CardActionArea>
                         <CardMedia
@@ -98,10 +99,11 @@ const MainPageCards = () => {
                     </Typography>
                         </CardContent>
                     </CardActionArea>
-
                 </Card>
+                </a>
             </div>
             <div className='hospitalisation'>
+            <a href='/hospitalisation'>
                 <Card className={classes.root}>
                     <CardActionArea>
                         <CardMedia
@@ -117,12 +119,11 @@ const MainPageCards = () => {
                             We take care of your children safely, trust is our key word.
                             Do not hesitate to talk to our doctors.
                             May the force be with you
-
                     </Typography>
                         </CardContent>
                     </CardActionArea>
-
                 </Card>
+                </a>
             </div>
             <div className='vaccination'>
                 <a href="/VaccinationPage">

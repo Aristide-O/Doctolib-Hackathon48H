@@ -1,17 +1,18 @@
 import React from 'react'
 
+import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
+import { blue } from '@material-ui/core/colors';
 import {
     makeStyles,
     ThemeProvider,
     createMuiTheme,
 } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
-
-import { blue } from '@material-ui/core/colors';
 import { ResponsiveLine } from '@nivo/line'
+import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 import './GrowthPage.css';
 
 const theme = createMuiTheme({
@@ -360,6 +361,16 @@ const dataWeight =
 
 const GrowthPage = () => {
     const classes = useStyles();
+    const notify = () => toast.success(' Add Success!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+
 
     return (
         <div>
@@ -398,9 +409,19 @@ const GrowthPage = () => {
                                 </div>
                             </FormControl>
                             <div className="btn-insc">
-                                <Button variant="contained" color="primary" type='submit'>
+                                <Button variant="contained" onClick={notify} color="primary" type='submit'>
                                     Apply
                         </Button>
+                        <ToastContainer
+                        position="top-right"
+                        autoClose={3000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover />
                             </div>
                         </div>
 
@@ -500,6 +521,16 @@ const GrowthPage = () => {
                                 <Button variant="contained" color="primary" type='submit'>
                                     Apply
                         </Button>
+                        <ToastContainer
+                        position="top-right"
+                        autoClose={3000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover />
                             </div>
                         </div>
 

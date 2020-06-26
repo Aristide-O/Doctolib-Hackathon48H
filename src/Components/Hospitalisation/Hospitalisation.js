@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -28,7 +28,7 @@ import {
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
-import './VaccinationPage.css';
+import './Hospitalisation.css';
 
 const useRowStyles = makeStyles({
     root: {
@@ -74,15 +74,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function createData(Date, Vaccine, Lot, eSignature) {
+function createData(Pathology, Date, Age, Weight, Tall, Examen) {
 
     return {
+        Pathology,
         Date,
-        Vaccine,
-        Lot,
-        eSignature,
+        Age,
+        Weight,
+        Tall,
         Details: [
-            { resume: "Details" }
+            { resume: "Comments" }
         ]
     };
 }
@@ -101,19 +102,20 @@ const Row = (props) => {
                     </IconButton>
                 </TableCell>
                 <TableCell component="th" scope="row">
-                    {row.Date}
+                    {row.Pathology}
                 </TableCell>
-                <TableCell align="left">{row.Vaccine}</TableCell>
-                <TableCell align="left">{row.Lot}</TableCell>
-                <TableCell align="left">{row.eSignature}</TableCell>
+                <TableCell align="left">{row.Date}</TableCell>
+                <TableCell align="left">{row.Age}</TableCell>
+                <TableCell align="left">{row.Weight}</TableCell>
+                <TableCell align="left">{row.Tall}</TableCell>
             </TableRow>
             <TableRow>
                 <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <Box margin={1}>
                             <Typography variant="h6" gutterBottom component="div">
-                                Examen
-                            </Typography>
+                                Details
+                  </Typography>
                             <Table size="small" aria-label="purchases">
                                 <TableBody>
                                     {row.Details.map((DetailsRow) => (
@@ -134,19 +136,19 @@ const Row = (props) => {
 }
 
 const rows = [
-    createData('05/01/2019', 'Influenza', 'e-73567SP', 'Ph Lindsay Yohan'),
-    createData('15/02/2019', 'Yelow Fever', 'z-7234TH', 'Ph Jonathan Grant'),
-    createData('20/03/2019', 'Varicella ', 'd-7XVCSP', 'Ph Steve Rogers'),
-    createData('18/04/2019', 'Rotavirus vaccine', 'e-24567SP', 'Ph Rachid Larziz'),
-    createData('25/06/2020', 'Meningococcal vaccine', 'c-63567SP', 'Ph Honoré Bonaventure'),
+    createData('Pathology', '05/01/2019', '1', 7, 65),
+    createData('Pathology', '15/02/2019', '2', 10, 80),
+    createData('Pathology', '20/03/2019', '3', 13, 92),
+    createData('Pathology', '18/04/2019', '4', 15, 101),
+    createData('Pathology', '25/06/2020', '5', 18, 118),
 ];
 
-const VaccinationPage = () => {
+const Hospitalisation = () => {
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-
+    
     const notify = () => toast.success(' Add Success!', {
         position: "top-right",
         autoClose: 3000,
@@ -167,50 +169,59 @@ const VaccinationPage = () => {
     };
     return (
         <div>
-            <div className='h1-exa'>
-                <h1>Vaccination</h1>
+            <div className='h1-hos'>
+                <h1>Hospitalisation</h1>
             </div>
             <ThemeProvider theme={theme}>
-                <div className='form-exa'>
+                <div className='form-hos'>
                     <FormControl fullWidth className={classes.margin}>
 
-                        <div className='data-exa'>
-                            <div className="align-exa">
-                                <div className='input-exa'>
+                        <div className='input-hos'>
+                            <TextField
+                                className={classes.margin}
+                                variant="outlined"
+                                id="mui-theme-provider-outlined-input"
+                                type='Date'
+                                required
+                            />
+                        </div><div className='data-hos'>
+                            <div className="align-hos">
+                                <div className='input-hos'>
                                     <TextField
                                         className={classes.margin}
+                                        label="Weight"
                                         variant="outlined"
                                         id="mui-theme-provider-outlined-input"
-                                        type='Date'
+                                        type='number'
                                         required
                                     />
                                 </div>
-                                <div className='input-exa'>
+                                <div className='input-hos'>
                                     <TextField
                                         className={classes.margin}
-                                        label="Lot serial number"
+                                        label="Tall"
                                         variant="outlined"
                                         id="mui-theme-provider-outlined-input"
-                                        type='text'
+                                        type='number'
                                         required
                                     />
                                 </div>
                             </div>
-                            <div className="align-exa">
-                                <div className='input-exa'>
+                            <div className="align-hos">
+                                <div className='input-hos'>
                                     <TextField
                                         className={classes.margin}
-                                        label="Vaccine"
+                                        label="Age"
                                         variant="outlined"
                                         id="mui-theme-provider-outlined-input"
-                                        type='text'
+                                        type='number'
                                         required
                                     />
                                 </div>
-                                <div className='input-exa'>
+                                <div className='input-hos'>
                                     <TextField
                                         className={classes.margin}
-                                        label="e-signature"
+                                        label="Pathology"
                                         variant="outlined"
                                         id="mui-theme-provider-outlined-input"
                                         type='text'
@@ -220,10 +231,10 @@ const VaccinationPage = () => {
                             </div>
                         </div>
 
-                        <div className='area-exa'>
+                        <div className='area-hos'>
                             <TextField
                                 id="mui-theme-provider-outlined-full-width-input"
-                                label="Comments"
+                                label="Examen"
                                 fullWidth
                                 InputLabelProps={{
                                     shrink: true,
@@ -237,7 +248,8 @@ const VaccinationPage = () => {
                     <div className="btn-insc">
                         <Button variant="contained" onClick={notify} color="primary" type='submit'>
                             Add
-            </Button><ToastContainer
+            </Button>
+            <ToastContainer
                         position="top-right"
                         autoClose={3000}
                         hideProgressBar={false}
@@ -247,7 +259,6 @@ const VaccinationPage = () => {
                         pauseOnFocusLoss
                         draggable
                         pauseOnHover />
-
                     </div>
                 </div>
                 <div className="cont-tab">
@@ -257,10 +268,11 @@ const VaccinationPage = () => {
                                 <TableHead>
                                     <TableRow>
                                         <StyledTableCell >Détails</StyledTableCell>
+                                        <StyledTableCell >Pathology</StyledTableCell>
                                         <StyledTableCell >Date</StyledTableCell>
-                                        <StyledTableCell >Vaccine</StyledTableCell>
-                                        <StyledTableCell >Lot serial number</StyledTableCell>
-                                        <StyledTableCell >e-signature</StyledTableCell>
+                                        <StyledTableCell >Age&nbsp;(yrs)</StyledTableCell>
+                                        <StyledTableCell >Weight&nbsp;(kg)</StyledTableCell>
+                                        <StyledTableCell >Tall&nbsp;(cm)</StyledTableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -287,4 +299,4 @@ const VaccinationPage = () => {
     )
 }
 
-export default VaccinationPage
+export default Hospitalisation

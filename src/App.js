@@ -7,6 +7,7 @@ import './App.css';
 
 import GrowthPage from './Components/GrowthPage/GrowthPage'
 import Inscription from './Components/InscriptionPage/Inscription';
+import Hospitalisation from './Components/Hospitalisation/Hospitalisation';
 import MainPage from './Components/MainPage/MainPage'
 import MainPageGlobal from './Components/Banniere/MainPageGlobal';
 import MedicalSurveillance from './Components/MedicalSurveillance/MedicalSurveillance';
@@ -15,6 +16,7 @@ import ProfilPage from './Components/ProfilPage/ProfilPage';
 import VaccinationPage from './Components/VaccinationPage/VaccinationPage';
 
 import { Switch, Route } from 'react-router-dom';
+
 
 const App = () => {
   return (
@@ -42,6 +44,10 @@ const App = () => {
         <Route path='/GrowthPage'>
           <Navbar />
           <GrowthPage />
+        </Route>
+        <Route path='/Hospitalisation'>
+          <Navbar />
+          <Hospitalisation />
         </Route>
         <Route path='/VaccinationPage'>
           <Navbar />

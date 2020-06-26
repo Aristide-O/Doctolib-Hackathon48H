@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-    makeStyles,
-    ThemeProvider,
-    createMuiTheme,
-    withStyles
-} from '@material-ui/core/styles';
-import { blue } from '@material-ui/core/colors';
+
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Collapse from '@material-ui/core/Collapse';
@@ -23,6 +17,15 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+
+import { blue } from '@material-ui/core/colors';
+import {
+    makeStyles,
+    ThemeProvider,
+    createMuiTheme,
+    withStyles
+} from '@material-ui/core/styles';
+import { ToastContainer, toast } from 'react-toastify';
 
 import './MedicalSurveillance.css';
 
@@ -143,6 +146,16 @@ const MedicalSurveillance = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
+    const notify = () => toast.success(' Add Success!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
@@ -230,9 +243,19 @@ const MedicalSurveillance = () => {
 
                     </FormControl>
                     <div className="btn-insc">
-                        <Button variant="contained" color="primary" type='submit'>
-                            submit
+                        <Button variant="contained" onClick={notify} color="primary" type='submit'>
+                            Add
             </Button>
+            <ToastContainer
+                        position="top-right"
+                        autoClose={3000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover />
                     </div>
                 </div>
                 <div className="cont-tab">
