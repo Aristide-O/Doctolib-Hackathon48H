@@ -37,7 +37,7 @@ export default function LandingPage() {
       <div className="Buttons-landingPage">
       <NavLink to="/Inscription">
         <Button variant="outlined" size="large" color="primary" className={classes.margin}>
-          Particulier
+          Particular
         </Button>
       </NavLink>
 

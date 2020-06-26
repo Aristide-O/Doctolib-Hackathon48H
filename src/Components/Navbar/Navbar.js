@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 import MenuIcon from '@material-ui/icons/Menu';
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import SearchIcon from '@material-ui/icons/Search';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -85,7 +86,8 @@ const Navbar = () => {
 
     const history = useHistory()
     const navigateToProfil = () => history.push('/ProfilPage')
-    const navigateToTwoMain = () => history.push('/MainPage')
+    const navigateToMain = () => history.push('/MainPage')
+    const navigateToLanding = () => history.push('/')
 
     return(
 <div className={classes.root}>
@@ -102,10 +104,14 @@ const Navbar = () => {
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             <Button color="#fff"
-            onClick={() => navigateToTwoMain()}>
+            onClick={() => navigateToMain()}>
               Health E-Book
             </Button>
           </Typography>
+          <Button 
+            onClick={() => navigateToLanding()}>
+         < PowerSettingsNewIcon/>
+         </Button>
           <Button color="inherit" 
           onClick={() => navigateToProfil()}>
             Profil
