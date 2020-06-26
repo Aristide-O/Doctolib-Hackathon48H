@@ -1,136 +1,174 @@
-import React from 'react'
+import React from 'react';
+
 import {
-    makeStyles,
-    ThemeProvider,
-    createMuiTheme,
-} from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import { blue } from '@material-ui/core/colors';
+    Form,
+    Input,
+    Select,
+    Row,
+    Col,
+    Checkbox,
+    Button,
+} from 'antd';
 import { useHistory } from 'react-router-dom'
 
-import './Inscription.css'
+import 'antd/dist/antd.css'
+import './Inscription.css';
 
-const theme = createMuiTheme({
-    palette: {
-        primary: blue,
+const { Option } = Select;
+
+
+const formItemLayout = {
+    labelCol: {
+        xs: { span: 24 },
+        sm: { span: 8 },
     },
-});
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        '& > *': {
-            margin: theme.spacing(1),
+    wrapperCol: {
+        xs: { span: 24 },
+        sm: { span: 16 },
+    },
+};
+const tailFormItemLayout = {
+    wrapperCol: {
+        xs: {
+            span: 24,
+            offset: 0,
         },
-        margin: {
-            margin: theme.spacing(1),
+        sm: {
+            span: 16,
+            offset: 8,
         },
     },
-}));
-
-
+};
 
 const Inscription = () => {
-    const classes = useStyles();
+    const [form] = Form.useForm();
 
     const history = useHistory()
-    const navigateTo = () => history.push('/ConnectionPage')
+    const navigateToMain = () => history.push('/MainPage')
 
-    const [values, setValues] = React.useState({
-        amount: '',
-        password: '',
-        weight: '',
-        weightRange: '',
-        showPassword: false,
-    });
-
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
+    const onFinish = values => {
+        console.log('Received values of form: ', values);
     };
 
-    const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
-    };
-
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
+    const prefixSelector = (
+        <Form.Item name="prefix" noStyle>
+            <Select style={{ width: 70 }}>
+                <Option value="33">+33</Option>
+            </Select>
+        </Form.Item>
+    );
 
     return (
-        <div>
-            <h1 className="h1-insc">Inscription</h1>
-            <div className="cont-insc">
-                <FormControl className={classes.margin}>
-                    <ThemeProvider theme={theme}>
-                        <div className='input-insc'>
-                            <TextField
-                                className={classes.margin}
-                                label="Lastname"
-                                variant="outlined"
-                                id="mui-theme-provider-outlined-input"
-                                required
-                            />
-                        </div>
-                        <div className='input-insc'>
-                            <TextField
-                                className={classes.margin}
-                                label="Firstname"
-                                variant="outlined"
-                                id="mui-theme-provider-outlined-input"
-                                required
-                            />
-                        </div>
-                        <div className='input-insc'>
-                            <TextField
-                                className={classes.margin}
-                                label="Email"
-                                variant="outlined"
-                                id="mui-theme-provider-outlined-input"
-                                type="Email"
-                                required
-                            />
-                        </div>
-                        <div className='input-insc'>
-                            <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={values.showPassword ? 'text' : 'password'}
-                                value={values.password}
-                                onChange={handleChange('password')}
-                                endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                            edge="end"
-                                        >
-                                            {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                                        </IconButton>
-                                    </InputAdornment>
+        <div className="cont-ins">
+            <Form
+                {...formItemLayout}
+                form={form}
+                name="register"
+                onFinish={onFinish}
+                scrollToFirstError
+            >
+                <Form.Item name={['user', 'Lastname']} label="Lastname" rules={[{ required: true }]}>
+                    <Input />
+                </Form.Item>
+                <Form.Item name={['user', 'Firstname']} label="Firstname" rules={[{ required: true }]}>
+                    <Input />
+                </Form.Item>
+                <Form.Item
+                    name="email"
+                    label="E-mail"
+                    rules={[
+                        {
+                            type: 'email',
+                            message: 'The input is not valid E-mail!',
+                        },
+                        {
+                            required: true,
+                            message: 'Please input your E-mail!',
+                        },
+                    ]}
+                >
+                    <Input />
+                </Form.Item>
+
+                <Form.Item
+                    name="password"
+                    label="Password"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please input your password!',
+                        },
+                    ]}
+                    hasFeedback
+                >
+                    <Input.Password />
+                </Form.Item>
+                <Form.Item
+                    name="confirm"
+                    label="Confirm Password"
+                    dependencies={['password']}
+                    hasFeedback
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please confirm your password!',
+                        },
+                        ({ getFieldValue }) => ({
+                            validator(rule, value) {
+                                if (!value || getFieldValue('password') === value) {
+                                    return Promise.resolve();
                                 }
-                            />
-                        </div>
-                    </ThemeProvider>
-                </FormControl>
-                <div className="btn-insc">
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={() => navigateTo()}>
-                            submit          
-                    </Button>
-                </div>
-            </div>
+                                return Promise.reject('The two passwords that you entered do not match!');
+                            },
+                        }),
+                    ]}
+                >
+                    <Input.Password />
+                </Form.Item>
+                <Form.Item
+                    name="phone"
+                    label="Phone Number"
+                    rules={[{ required: true, message: 'Please input your phone number!' }]}
+                >
+                    <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
+                </Form.Item>
+                <Form.Item label="Captcha" extra="We must make sure that your are a human.">
+                    <Row gutter={8}>
+                        <Col span={12}>
+                            <Form.Item
+                                name="captcha"
+                                noStyle
+                                rules={[{ required: true, message: 'Please input the captcha you got!' }]}
+                            >
+                                <Input />
+                            </Form.Item>
+                        </Col>
+                        <Col span={12}>
+                            <Button>Get captcha</Button>
+                        </Col>
+                    </Row>
+                </Form.Item>
+
+                <Form.Item
+                    name="agreement"
+                    valuePropName="checked"
+                    rules={[
+                        { validator: (_, value) => value ? Promise.resolve() : Promise.reject('Should accept agreement') },
+                    ]}
+                    {...tailFormItemLayout}
+                >
+                    <Checkbox>
+                        I have read the <a href="#">agreement</a>
+                    </Checkbox>
+                </Form.Item>
+                <Form.Item {...tailFormItemLayout}>
+                    <Button type="primary" onClick={()=>navigateToMain()}>
+                        Register
+                </Button>
+                </Form.Item>
+            </Form>
         </div>
-    )
-}
+    );
+};
 
 export default Inscription

@@ -6,14 +6,19 @@
   margin: 40px auto 0;
 }
 
-.containerMain div{
+.containerMain div {
   margin-bottom: 20px;
 }
 
-.surveillance a{
-text-decoration: none;
+.surveillance,
+a {
+  text-decoration: none;
 }
 
-.vaccination a{
+.vaccination a {
   text-decoration: none;
-  }
+}
+
+.growth a {
+  text-decoration: none;
+}

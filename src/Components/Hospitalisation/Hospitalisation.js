@@ -28,7 +28,8 @@ import {
 } from '@material-ui/core/styles';
 import { ToastContainer, toast } from 'react-toastify';
 
-import './MedicalSurveillance.css';
+import 'react-toastify/dist/ReactToastify.css';
+import './Hospitalisation.css';
 
 const useRowStyles = makeStyles({
     root: {
@@ -83,7 +84,7 @@ function createData(Pathology, Date, Age, Weight, Tall, Examen) {
         Weight,
         Tall,
         Details: [
-            { resume: "Details" }
+            { resume: "Comments" }
         ]
     };
 }
@@ -92,6 +93,7 @@ const Row = (props) => {
     const { row } = props;
     const [open, setOpen] = React.useState(false);
     const classes = useRowStyles();
+
     return (
         <React.Fragment>
             <TableRow className={classes.root}>
@@ -113,7 +115,7 @@ const Row = (props) => {
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <Box margin={1}>
                             <Typography variant="h6" gutterBottom component="div">
-                                Examen
+                                Details
                   </Typography>
                             <Table size="small" aria-label="purchases">
                                 <TableBody>
@@ -135,11 +137,11 @@ const Row = (props) => {
 }
 
 const rows = [
-    createData('Bacterial Sinusitis', '05/01/2019', '1', 7, 65),
-    createData('Cough', '15/02/2019', '2', 10, 80),
-    createData('Bronchiolitis', '20/03/2019', '3', 13, 92),
-    createData('Bronchitis', '18/04/2019', '4', 15, 101),
-    createData('Ear Pain', '25/06/2020', '5', 18, 118),
+    createData('Pathology', '05/01/2019', '1', 7, 65),
+    createData('Pathology', '15/02/2019', '2', 10, 80),
+    createData('Pathology', '20/03/2019', '3', 13, 92),
+    createData('Pathology', '18/04/2019', '4', 15, 101),
+    createData('Pathology', '25/06/2020', '5', 18, 118),
 ];
 
 const style = {
@@ -153,10 +155,11 @@ const style = {
     fontSize: 14,
 };
 
-const MedicalSurveillance = () => {
+const Hospitalisation = () => {
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
 
     const notify = () => toast.success(' Add Success!', {
         position: "top-right",
@@ -178,14 +181,14 @@ const MedicalSurveillance = () => {
     };
     return (
         <div>
-            <div className='h1-exa'>
-                <h1>Examens</h1>
+            <div className='h1-hos'>
+                <h1>Hospitalisation</h1>
             </div>
             <ThemeProvider theme={theme}>
-                <div className='form-exa'>
+                <div className='form-hos'>
                     <FormControl fullWidth className={classes.margin}>
 
-                        <div className='input-exa'>
+                        <div className='input-hos'>
                             <TextField
                                 className={classes.margin}
                                 variant="outlined"
@@ -193,9 +196,9 @@ const MedicalSurveillance = () => {
                                 type='Date'
                                 required
                             />
-                        </div><div className='data-exa'>
-                            <div className="align-exa">
-                                <div className='input-exa'>
+                        </div><div className='data-hos'>
+                            <div className="align-hos">
+                                <div className='input-hos'>
                                     <TextField
                                         className={classes.margin}
                                         label="Weight"
@@ -205,7 +208,7 @@ const MedicalSurveillance = () => {
                                         required
                                     />
                                 </div>
-                                <div className='input-exa'>
+                                <div className='input-hos'>
                                     <TextField
                                         className={classes.margin}
                                         label="Tall"
@@ -216,8 +219,8 @@ const MedicalSurveillance = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="align-exa">
-                                <div className='input-exa'>
+                            <div className="align-hos">
+                                <div className='input-hos'>
                                     <TextField
                                         className={classes.margin}
                                         label="Age"
@@ -227,7 +230,7 @@ const MedicalSurveillance = () => {
                                         required
                                     />
                                 </div>
-                                <div className='input-exa'>
+                                <div className='input-hos'>
                                     <TextField
                                         className={classes.margin}
                                         label="Pathology"
@@ -240,7 +243,7 @@ const MedicalSurveillance = () => {
                             </div>
                         </div>
 
-                        <div className='area-exa'>
+                        <div className='area-hos'>
                             <TextField
                                 id="mui-theme-provider-outlined-full-width-input"
                                 label="Examen"
@@ -311,4 +314,4 @@ const MedicalSurveillance = () => {
     )
 }
 
-export default MedicalSurveillance
+export default Hospitalisation
