@@ -32,7 +32,7 @@ export default function LandingPage() {
         Health e-Book
       </p>
       <div className='alreadyRegistered'>
-      <p>Sign Up</p>
+      <p>Registration:</p>
       </div>
       <div className="Buttons-landingPage">
       <NavLink to="/Inscription">
