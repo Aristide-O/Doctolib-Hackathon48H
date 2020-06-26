@@ -1,6 +1,7 @@
 .h1-gro {
-    text-align: center;
-  }
+  margin-top:30px;
+  text-align: center;
+}
   
   .form-gro {
     display: flex;
@@ -29,4 +30,9 @@
   .curve-container{
       display: flex;
       flex-direction: row;
+  }
+
+  h3{
+
+    margin-bottom: 20px;
   }

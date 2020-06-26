@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
       flexGrow: 1,
+      color: '#ffff',
       display: 'none',
       [theme.breakpoints.up('sm')]: {
         display: 'block',
@@ -61,7 +62,6 @@ const useStyles = makeStyles((theme) => ({
     },
     inputInput: {
       padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
       transition: theme.transitions.create('width'),
       width: '100%',
@@ -84,8 +84,8 @@ const Navbar = () => {
     const classes = useStyles(theme);
 
     const history = useHistory()
-    const navigateTo = () => history.push('/ProfilPage')
-    const navigateToTwo = () => history.push('/MainPage')
+    const navigateToProfil = () => history.push('/ProfilPage')
+    const navigateToTwoMain = () => history.push('/MainPage')
 
     return(
 <div className={classes.root}>
@@ -100,14 +100,14 @@ const Navbar = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            <Button color="inherit" 
-            onClick={() => navigateToTwo()}>
+          <Typography variant="h6" className={classes.title}>
+            <Button color="#fff"
+            onClick={() => navigateToTwoMain()}>
               Health E-Book
             </Button>
           </Typography>
           <Button color="inherit" 
-          onClick={() => navigateTo()}>
+          onClick={() => navigateToProfil()}>
             Profil
             </Button>
           <div className={classes.search}>

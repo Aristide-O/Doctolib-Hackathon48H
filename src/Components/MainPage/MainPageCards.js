@@ -13,6 +13,7 @@ import surveillance from './surveillanceMedical.jpg'
 import Typography from '@material-ui/core/Typography';
 import vaccination from './vaccination.jpg'
 
+import { BackTop } from 'antd';
 import { makeStyles } from '@material-ui/core/styles';
 
 import './MainPageCards.css'
@@ -25,6 +26,17 @@ const useStyles = makeStyles({
         height: 140,
     },
 });
+
+const style = {
+    height: 40,
+    width: 40,
+    lineHeight: '40px',
+    borderRadius: 4,
+    backgroundColor: '#1088e9',
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 14,
+  };
 
 const MainPageCards = () => {
     const classes = useStyles();
@@ -55,7 +67,6 @@ const MainPageCards = () => {
                 <a href='/MedicalSurveillance'>
                     <Card className={classes.root}>
                         <CardActionArea>
-
                             <CardMedia
                                 className={classes.media}
                                 image={surveillance}
@@ -144,7 +155,6 @@ const MainPageCards = () => {
                     </Typography>
                         </CardContent>
                     </CardActionArea>
-
                 </Card>
                 </a>
             </div>
@@ -166,9 +176,11 @@ const MainPageCards = () => {
                     </Typography>
                         </CardContent>
                     </CardActionArea>
-
                 </Card>
             </div>
+            <BackTop>
+      <div style={style}>UP</div>
+    </BackTop>
         </div>
     );
 }

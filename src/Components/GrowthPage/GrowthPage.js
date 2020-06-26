@@ -3,6 +3,8 @@ import React from 'react'
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
+
+import { BackTop } from 'antd';
 import { blue } from '@material-ui/core/colors';
 import {
     makeStyles,
@@ -199,7 +201,7 @@ const dataWeight =
             ]
         },
     ]
-    const dataTall =
+const dataTall =
     [
         {
             "id": "Child",
@@ -359,6 +361,17 @@ const dataWeight =
         },
     ]
 
+    const style = {
+        height: 40,
+        width: 40,
+        lineHeight: '40px',
+        borderRadius: 4,
+        backgroundColor: '#1088e9',
+        color: '#fff',
+        textAlign: 'center',
+        fontSize: 14,
+      };
+
 const GrowthPage = () => {
     const classes = useStyles();
     const notify = () => toast.success(' Add Success!', {
@@ -408,20 +421,20 @@ const GrowthPage = () => {
                                     </div>
                                 </div>
                             </FormControl>
-                            <div className="btn-insc">
+                            <div className="btn">
                                 <Button variant="contained" onClick={notify} color="primary" type='submit'>
                                     Apply
                         </Button>
-                        <ToastContainer
-                        position="top-right"
-                        autoClose={3000}
-                        hideProgressBar={false}
-                        newestOnTop={false}
-                        closeOnClick
-                        rtl={false}
-                        pauseOnFocusLoss
-                        draggable
-                        pauseOnHover />
+                                <ToastContainer
+                                    position="top-right"
+                                    autoClose={3000}
+                                    hideProgressBar={false}
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    rtl={false}
+                                    pauseOnFocusLoss
+                                    draggable
+                                    pauseOnHover />
                             </div>
                         </div>
 
@@ -517,20 +530,20 @@ const GrowthPage = () => {
                                     </div>
                                 </div>
                             </FormControl>
-                            <div className="btn-insc">
-                                <Button variant="contained" color="primary" type='submit'>
+                            <div className="btn">
+                                <Button variant="contained" onClick={notify} color="primary" type='submit'>
                                     Apply
                         </Button>
-                        <ToastContainer
-                        position="top-right"
-                        autoClose={3000}
-                        hideProgressBar={false}
-                        newestOnTop={false}
-                        closeOnClick
-                        rtl={false}
-                        pauseOnFocusLoss
-                        draggable
-                        pauseOnHover />
+                                <ToastContainer
+                                    position="top-right"
+                                    autoClose={3000}
+                                    hideProgressBar={false}
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    rtl={false}
+                                    pauseOnFocusLoss
+                                    draggable
+                                    pauseOnHover />
                             </div>
                         </div>
 
@@ -599,6 +612,9 @@ const GrowthPage = () => {
                     </div>
                 </div>
             </ThemeProvider>
+            <BackTop>
+                <div style={style}>UP</div>
+            </BackTop>
         </div >
     )
 }

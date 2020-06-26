@@ -1,6 +1,3 @@
-.h1-exa {
-  text-align: center;
-}
 
 .form-exa {
   display: flex;
@@ -39,4 +36,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.btn{
+  margin-top: 20px;
 }

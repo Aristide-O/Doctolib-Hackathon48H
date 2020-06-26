@@ -14,13 +14,13 @@
   flex-direction: column;
   Justify-content: center;
   width: 40%;
-  margin: 0px auto;
+  margin: 20px auto;
   text-align: center;
   border: 2px solid #1e90ff;
   border-radius: 1%;
 }
 
-.h2-Pro {
+.h1-Pro {
   text-align: center;
   margin: 20px 0px;
 }

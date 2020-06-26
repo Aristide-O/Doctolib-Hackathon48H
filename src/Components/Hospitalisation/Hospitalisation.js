@@ -18,6 +18,7 @@ import TableRow from '@material-ui/core/TableRow';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
+import { BackTop } from 'antd';
 import { blue } from '@material-ui/core/colors';
 import {
     makeStyles,
@@ -143,12 +144,23 @@ const rows = [
     createData('Pathology', '25/06/2020', '5', 18, 118),
 ];
 
+const style = {
+    height: 40,
+    width: 40,
+    lineHeight: '40px',
+    borderRadius: 4,
+    backgroundColor: '#1088e9',
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 14,
+};
+
 const Hospitalisation = () => {
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-    
+
     const notify = () => toast.success(' Add Success!', {
         position: "top-right",
         autoClose: 3000,
@@ -245,20 +257,20 @@ const Hospitalisation = () => {
                         </div>
 
                     </FormControl>
-                    <div className="btn-insc">
+                    <div className="btn">
                         <Button variant="contained" onClick={notify} color="primary" type='submit'>
                             Add
             </Button>
-            <ToastContainer
-                        position="top-right"
-                        autoClose={3000}
-                        hideProgressBar={false}
-                        newestOnTop={false}
-                        closeOnClick
-                        rtl={false}
-                        pauseOnFocusLoss
-                        draggable
-                        pauseOnHover />
+                        <ToastContainer
+                            position="top-right"
+                            autoClose={3000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover />
                     </div>
                 </div>
                 <div className="cont-tab">
@@ -295,6 +307,9 @@ const Hospitalisation = () => {
                     </Paper>
                 </div>
             </ThemeProvider>
+            <BackTop>
+                <div style={style}>UP</div>
+            </BackTop>
         </div >
     )
 }
