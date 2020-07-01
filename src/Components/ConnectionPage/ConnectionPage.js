@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 
 import { Form, Input, Button, Checkbox } from 'antd';
@@ -56,7 +57,7 @@ const ConnectionPage = () => {
                         <Checkbox>Remember me</Checkbox>
                     </Form.Item>
 
-                    <a className="login-form-forgot" href="#">
+                    <a className="login-form-forgot" href="#" rel="noopener noreferrer" >
                         Forgot password
                 </a>
                 </Form.Item>

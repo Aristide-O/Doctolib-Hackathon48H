@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 
 import {
@@ -163,7 +164,7 @@ const Inscription = () => {
                         {...tailFormItemLayout}
                     >
                         <Checkbox>
-                            I have read the <a href="#">agreement</a>
+                            I have read the <a href="#" rel="noopener noreferrer">agreement</a>
                         </Checkbox>
                     </Form.Item>
                     <Form.Item {...tailFormItemLayout}>
