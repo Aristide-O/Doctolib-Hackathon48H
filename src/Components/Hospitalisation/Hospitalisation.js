@@ -196,7 +196,8 @@ const Hospitalisation = () => {
                                 type='Date'
                                 required
                             />
-                        </div><div className='data-hos'>
+                        </div>
+                        <div className='data-hos'>
                             <div className="align-hos">
                                 <div className='input-hos'>
                                     <TextField
